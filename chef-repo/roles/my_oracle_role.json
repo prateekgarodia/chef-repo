@@ -1,0 +1,44 @@
+{
+  "name": "my_oracle_role",
+  "description": "",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+    "my_template_cookbook": {
+      "sudo": {
+        "groups": [
+          "sysadmin",
+          "wheel",
+          "admin",
+          "dba",
+          "oracle",
+          "bsil"
+        ],
+        "users": [
+          "jerry",
+          "greg",
+          "prateek",
+          "ruchika",
+          "pawan",
+          "radha"
+        ]
+      }
+    },
+    "my_child_cookbook": {
+      "child_behaviour": "Very Bad Child! Get some manners! Then we are going to examine again."
+    }
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[my_java]",
+    "recipe[my_oracle_db]",
+    "recipe[my_weblogic]",
+    "recipe[my_template_cookbook]",
+    "recipe[my_parent_cookbook::parent]"
+  ],
+  "env_run_lists": {
+
+  }
+}

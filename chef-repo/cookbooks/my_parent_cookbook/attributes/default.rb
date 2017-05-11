@@ -1,0 +1,1 @@
+default['my_parent_cookbook']['parent_behaviour'] = "Parent is very Good!"

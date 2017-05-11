@@ -1,0 +1,1 @@
+default['my_child_cookbook']['child_behaviour'] = "Child is very Good!"

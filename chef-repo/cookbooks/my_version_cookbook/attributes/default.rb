@@ -1,0 +1,13 @@
+default['my_version_cookbook']['config_file'] = "config.txt"
+default['my_version_cookbook']['test_file'] = "file.txt"
+if node['platform'] == "windows"
+	default['my_version_cookbook']['config_path'] = "D:/Personal/Workspace/Chef-Training/chef-starter/junk/#{node['my_version_cookbook']['config_file']}"
+	default['my_version_cookbook']['file_path'] = "D:/Personal/Workspace/Chef-Training/chef-starter/junk/#{node['my_version_cookbook']['test_file']}"
+	default['my_version_cookbook']['owner'] = "administrator"
+	default['my_version_cookbook']['group'] = "administrator"
+elsif node['platform'] == "ubuntu" || node['platform'] == "oracle"
+	default['my_version_cookbook']['config_path'] = "/root/#{node['my_version_cookbook']['config_file']}"
+	default['my_version_cookbook']['file_path'] = "/root/#{node['my_version_cookbook']['test_file']}"
+	default['my_version_cookbook']['owner'] = "root"
+	default['my_version_cookbook']['group'] = "root"
+end	
